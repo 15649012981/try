@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>转换案例</title>
+</head>
+<body>
+<canvas id="canvas" width="500px" height="500px" style="border: 1px solid black"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    //TODO 1.将默认旋转点平移到中心位置
+    context.translate(canvas.width/2,canvas.height/2);
+
+    setInterval(function(){
+        context.clearRect(-canvas.width/2,-canvas.height/2,canvas.width,canvas.height);
+
+        paint();
+
+        context.rotate(Math.PI/180*45);
+    },100);
+
+    function paint(){
+        for(var i=0;i<8;i++){
+            if(i==0){
+                context.beginPath();
+                context.arc(0,-20,5,0,Math.PI*2);
+                context.fill();
+            }else{
+                context.beginPath();
+                context.arc(0,-20,5,0,Math.PI*2);
+                context.stroke();
+            }
+
+            context.rotate(Math.PI/180*45);
+        }
+    }
+
+    /*context.fillRect(-canvas.width/2+10,-canvas.height/2+10,100,100);*/
+</script>
+</body>
+</html>

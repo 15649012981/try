@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>切割图片</title>
+</head>
+<body>
+<canvas id="canvas" width="500px" height="500px" style="border: 1px solid black"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    //TODO 1.绘制图片
+    var img = new Image();
+    img.src = "img/1.jpg";
+    img.onload = function(){
+        context.drawImage(img,0,0,400,300);
+    }
+    //TODO 2.切割图片
+    context.beginPath();
+    context.rect(100,100,100,100);
+    //context.arc(150,150,50,0,Math.PI*2);
+    context.clip();//TODO 切割
+</script>
+</body>
+</html>

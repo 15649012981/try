@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>动态的小球V01</title>
+</head>
+<body>
+<canvas id="canvas" width="500px" height="500px" style="border: 1px solid black"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    context.fillStyle = "green";
+
+    var y = 250,alpha = 1;
+
+    var t = setInterval(function(){
+        //TODO 1.清空画布所有内容
+        context.clearRect(0,0,canvas.width,canvas.height);
+        //TODO 设置透明度(0~1)
+        context.globalAlpha = alpha;
+        //TODO 2.进行新的绘制
+        context.beginPath();
+        context.arc(250,y,10,0,Math.PI*2);
+        context.fill();
+        //TODO 判断小球是否移出画布
+        if(y <= -10){
+            clearInterval(t);
+        }
+
+        //TODO 3.改变坐标值和透明度
+        y--;
+        alpha -= 0.005;
+    },100);
+</script>
+</body>
+</html>

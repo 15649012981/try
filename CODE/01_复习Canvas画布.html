@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>复习Canvas画布</title>
+</head>
+<body>
+<!--
+    TODO canvas画布
+    TODO * 默认大小区域 - 300*150
+    TODO * 也可以使用 CSS 样式
+    TODO * 注意 - 设置大小
+    TODO   * width和height属性
+    TODO   * 通过CSS的width和height属性
+    TODO     * 绘制的图像被拉伸
+-->
+<canvas id="canvas" width="500px" height="500px" style="background-color: cadetblue"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    /*
+      TODO 画布对象
+     */
+    var context = canvas.getContext("2d");
+
+    context.fillRect(100,100,100,100);
+</script>
+</body>
+</html>
