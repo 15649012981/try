@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>吃豆人V01</title>
+</head>
+<body>
+<canvas id="canvas" width="500px" height="500px" style="border: 1px solid black"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    //TODO 封装函数 - 绘制开口效果
+    function openMouth(){
+        //TODO 吃豆人的脸
+        context.beginPath();
+        context.arc(250,200,100,45*Math.PI/180,315*Math.PI/180);//TODO 弧形
+        context.lineTo(250,200);//TODO 上面的开口线
+        context.closePath();//TODO 下面的开口线
+        context.fillStyle = "yellow";
+        context.fill();
+        context.stroke();
+
+        //TODO 吃豆人的眼睛
+        context.beginPath();
+        context.arc(250,150,15,0,Math.PI*2);
+        context.fillStyle = "black";
+        context.fill();
+
+        //TODO 吃豆人的眼神
+        context.beginPath();
+        context.arc(255,145,5,0,Math.PI*2);
+        context.fillStyle = "white";
+        context.fill();
+    }
+    //TODO 封装函数 - 绘制闭口效果
+    function closeMouth(){
+        //TODO 吃豆人的脸
+        context.beginPath();
+        context.arc(250,200,100,0,Math.PI*2);//TODO 圆形
+        context.lineTo(250,200);//TODO 上面的开口线
+        context.closePath();
+        context.fillStyle = "yellow";
+        context.fill();
+
+        context.stroke();
+
+        //TODO 吃豆人的眼睛
+        context.beginPath();
+        context.arc(250,150,15,0,Math.PI*2);
+        context.fillStyle = "black";
+        context.fill();
+
+        //TODO 吃豆人的眼神
+        context.beginPath();
+        context.arc(255,145,5,0,Math.PI*2);
+        context.fillStyle = "white";
+        context.fill();
+    }
+    //TODO 开关
+    var isOpen = true;//TODO 默认开口
+    //TODO 核心控制器 - 开口和闭口切换效果
+    setInterval(function(){
+        context.clearRect(0,0,canvas.width,canvas.height);
+        if(isOpen){//TODO 开口
+            openMouth();
+            isOpen = false;
+        }else{//TODO 闭口
+            closeMouth();
+            isOpen = true;
+        }
+    },200);
+</script>
+</body>
+</html>

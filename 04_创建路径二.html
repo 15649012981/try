@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>创建路径二</title>
+</head>
+<body>
+<canvas id="canvas" width="500px" height="500px" style="border: 1px solid black"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    //TODO 绘制直线
+    context.beginPath();
+    context.moveTo(10,10);//TODO 设置起点
+    context.lineTo(10,150);//TODO 设置终点
+    context.stroke();//TODO 只能是stroke()
+
+    context.beginPath();
+    context.moveTo(10,150);
+    context.lineTo(150,150);
+    context.stroke();
+
+    //TODO 绘制折线
+    context.beginPath();
+    context.moveTo(20,10);//TODO 起点
+    context.lineTo(160,10);//TODO 折点
+    context.lineTo(160,150);//TODO 终点
+    //context.lineTo(20,10);
+    context.stroke();
+
+    //TODO 绘制多边形
+    context.beginPath();
+    context.moveTo(200,200);
+    context.lineTo(200,400);
+    context.lineTo(400,400);
+    context.lineTo(200,200);
+    context.fill();
+
+    context.beginPath();
+    context.moveTo(220,200);
+    context.lineTo(420,200);
+    context.lineTo(420,400);
+    context.closePath();//TODO 关闭创建路径
+    context.fill();
+</script>
+</body>
+</html>

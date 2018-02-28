@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>吃豆人V01</title>
+</head>
+<body>
+<canvas id="canvas" width="500px" height="500px" style="border: 1px solid black"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    //TODO 面向对象方式解析
+    //TODO 1.创建吃豆人的对象模板
+    function Pacman(){
+        //TODO 属性
+        this.isOpen = true;//TODO 开关
+        this.start = 45*Math.PI/180;
+        this.end = 315*Math.PI/180;
+        //TODO 方法
+        //TODO 1.绘制方法
+        this.paint = function(){
+            //TODO 吃豆人的脸
+            context.beginPath();
+            context.arc(250,200,100,this.start,this.end);
+            context.lineTo(250,200);
+            context.closePath();
+            context.fillStyle = "yellow";
+            context.fill();
+            context.stroke();
+
+            //TODO 吃豆人的眼睛
+            context.beginPath();
+            context.arc(250,150,15,0,Math.PI*2);
+            context.fillStyle = "black";
+            context.fill();
+
+            //TODO 吃豆人的眼神
+            context.beginPath();
+            context.arc(255,145,5,0,Math.PI*2);
+            context.fillStyle = "white";
+            context.fill();
+        }
+        //TODO 2.控制开闭切换
+        this.open = function(){
+            if(this.isOpen){//TODO 开口
+                this.start = 45*Math.PI/180;
+                this.end = 315*Math.PI/180;
+                this.isOpen = false;
+            }else{//TODO 闭口
+                this.start = 0;
+                this.end = Math.PI*2;
+                this.isOpen = true;
+            }
+        }
+    }
+    //TODO 创建吃豆人的对象
+    var pacman = new Pacman();
+
+    //TODO 核心控制器
+    setInterval(function(){
+        context.clearRect(0,0,canvas.width,canvas.height);
+
+        pacman.paint();
+        pacman.open();
+    },200);
+</script>
+</body>
+</html>

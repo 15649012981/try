@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>平铺图片</title>
+</head>
+<body>
+<canvas id="canvas" width="500px" height="500px" style="border: 1px solid black"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    //TODO 1.加载一张图片
+    var img = new Image();
+    img.src = "img/1.jpg";
+    //TODO 2.保证图片加载完毕
+    img.onload = function(){
+        //TODO a.设置平铺方式(返回平铺对象)
+        var ptn = context.createPattern(img,"repeat");
+        //TODO b.将平铺方式赋值给样式(fillStyle或strokeStyle)
+        context.fillStyle = ptn;
+        //TODO c.绘制图形
+        context.fillRect(0,0,canvas.width,canvas.height);
+    }
+</script>
+</body>
+</html>

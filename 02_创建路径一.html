@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>创建路径一</title>
+</head>
+<body>
+<canvas id="canvas" width="500px" height="500px" style="border: 1px solid black"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    /*
+      TODO 创建路径
+      TODO 1.调用 beginPath() 方法表示开始创建路径
+      TODO 2.调用设置图像方法(矩形、圆形等)
+      TODO 3.调用绘制方法
+     */
+    //TODO 实心矩形
+    context.beginPath();//TODO 开始创建路径
+    context.rect(10,10,100,100);
+    context.fill();//TODO 进行绘制
+    //TODO 空心矩形
+    context.beginPath();
+    context.rect(10,120,100,100);
+    context.stroke();
+    //TODO 实心圆形
+    context.beginPath();
+    context.arc(170,60,50,0,Math.PI*2);
+    context.fill();
+    //TODO 空心圆形
+    context.beginPath();
+    context.arc(170,170,50,0,Math.PI*2);
+    context.stroke();
+    //TODO 顺时针的实心弧形
+    context.beginPath();
+    context.arc(280,60,50,0,Math.PI*3/2);
+    context.fill();
+    //TODO 逆时针的实心弧形
+    context.beginPath();
+    context.arc(280,170,50,0,Math.PI*3/2,true);
+    context.fill();
+    //TODO 空心的弧形
+    context.beginPath();
+    context.arc(390,60,50,0,Math.PI*3/2);
+    context.stroke();
+
+    context.beginPath();
+    context.arc(390,170,50,0,Math.PI*3/2);
+    context.closePath();//TODO 关闭创建路径
+    context.stroke();
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>测试创建路径</title>
+</head>
+<body>
+<canvas id="canvas" width="500px" height="500px" style="border: 1px solid black"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    var x = 0,y = 0;
+    var flag = false;//TODO 默认不绘制
+    var pen = 1;//TODO 1 - 画笔,2 - 直线
+    //TODO 鼠标被按下 - 表示开始绘制
+    canvas.onmousedown = function(event){
+        x = event.offsetX;
+        y = event.offsetY;
+        flag = true;//TODO 表示可以绘制
+    }
+    canvas.onmouseup = function(){
+        flag = false;
+    }
+
+    canvas.onmousemove = function(event){
+        if(flag){
+            if(pen == 1){//TODO 画笔
+                context.lineTo(event.offsetX,event.offsetY);
+                context.stroke();
+            }else if(pen == 2){//TODO 直线
+                context.clearRect(0,0,canvas.width,canvas.height);
+
+                context.beginPath();
+                context.moveTo(x,y);
+                context.lineTo(event.offsetX,event.offsetY);
+                context.stroke();
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>
