@@ -201,7 +201,7 @@
 	margin-left: 20px;
 	height: 24px;
 	width: 36px;
-	background: url(../images/arrow_white.jpg) no-repeat;
+	background: url(../images/arrow_white.png) no-repeat;
 	background-size: cover; 
 }
 /*移入效果*/
@@ -212,7 +212,7 @@
 	color: #09bdc6;
 }
 .goToSale:hover b{
-	background: url(../images/arrow_blue.jpg) no-repeat;
+	background: url(../images/arrow_blue.png) no-repeat;
 	background-size: cover; 
 }
 /*点击效果*/
@@ -224,7 +224,7 @@
 	color: #ffffff;
 }
 .goToSale.active b{
-	background: url(../images/arrow_white.jpg) no-repeat;
+	background: url(../images/arrow_white.png) no-repeat;
 	background-size: cover; 
 }
 /*page2*/
@@ -573,7 +573,7 @@
 .page-size-5{
 	width: 100%;
 	height:1160px;
-	background: url(../images/page1-back-img.jpg) no-repeat;
+	background: url(../images/page1-back-img.png) no-repeat;
 	background-size: cover;
 }
 .face-img-set2{
@@ -643,7 +643,7 @@
 .page-size-8{
 	width: 100%;
 	height:1247px;
-	background: url(../images/page1-back-img.jpg) no-repeat;
+	background: url(../images/page1-back-img.png) no-repeat;
 	background-size: cover;
 }
 .page-size-8 .face-img-set4{
@@ -688,7 +688,7 @@
 /*page10*/
 .load-sent-mess{
 	position: relative;
-    background: url(../images/cloud_deployment.jpg) no-repeat;
+    background: url(../images/cloud_deployment.png) no-repeat;
     background-size: contain;
     width: 1400px;
     margin: 156px auto 120px;
